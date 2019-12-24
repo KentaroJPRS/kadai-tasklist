@@ -33,7 +33,7 @@
         </div>
 
         <p>
-            <a href="${pageContext.request.contextPath}/new">タスクの追加</a>
+            <a href="${pageContext.request.contextPath}/new">タスクの登録</a>
         </p>
 
     </c:param>
