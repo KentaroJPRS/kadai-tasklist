@@ -10,11 +10,22 @@
 </c:if>
 
 <label for="title">タスク名</label><br />
-<input type="text" name="title" value="${message.title}" />
+<input type="text" name="title" value="${task.title}" />
 <br /><br />
 
 <label for="content">タスク内容</label><br />
-<input type="text" name="content" value="${message.content}" />
+<input type="text" name="content" value="${task.content}" />
+<br /><br />
+
+<label for="deadline">タスク期限</label><br />
+<input type="text" name="deadline" value="${task.deadline}" />
+<br /><br />
+
+<label for="status">タスク状態</label><br />
+<input type="radio" name="status" value="0" checked>未
+<input type="radio" name="status" value="1" >中
+<input type="radio" name="status" value="2" >済
+<input type="radio" name="status" value="3" >止
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
