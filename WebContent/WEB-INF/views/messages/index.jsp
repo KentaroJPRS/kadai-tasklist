@@ -8,20 +8,19 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>メッセージ一覧</h2>
+        <h2>タスク一覧</h2>
         <ul>
-            <c:forEach var="message" items="${messages}">
+            <c:forEach var="task" items="${tasks}">
                 <li><a
-                    href="${pageContext.request.contextPath}/show?id=${message.id}">
-                        <c:out value="${message.id}" />
-                </a> ：<c:out value="${message.title}"></c:out> &gt; <c:out
-                        value="${message.content}" /></li>
+                    href="${pageContext.request.contextPath}/show?id=${task.id}">
+                        <c:out value="${task.id}" />
+                </a> ：<c:out value="${task.title}"></c:out> &gt; <c:out value="${task.content}" /></li>
             </c:forEach>
         </ul>
 
         <div id="pagination">
-            （全 ${messages_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((messages_count - 1) / 15) + 1}" step="1">
+            （全 ${tasks_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
@@ -34,7 +33,7 @@
         </div>
 
         <p>
-            <a href="${pageContext.request.contextPath}/new">新規タスクの追加</a>
+            <a href="${pageContext.request.contextPath}/new">タスクの追加</a>
         </p>
 
     </c:param>
