@@ -17,12 +17,8 @@
 <input type="text" name="content" value="${task.content}" />
 <br /><br />
 
-<label for="deadline">タスク期限</label><br />
-<input type="text" name="deadline" value="${task.deadline}" />
-<br /><br />
-
 <label for="status">タスク状態</label><br />
-<input type="radio" name="status" value="0" checked>未
+<input type="radio" name="status" value="0" Checked>未
 <input type="radio" name="status" value="1" >中
 <input type="radio" name="status" value="2" >済
 <input type="radio" name="status" value="3" >止

@@ -38,9 +38,6 @@ public class Task {
     @Column(name = "status", nullable = false)
     private Integer status;
 
-    @Column(name = "deadline", nullable = false)
-    private Timestamp deadline;
-
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
@@ -77,14 +74,6 @@ public class Task {
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public Timestamp getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(Timestamp deadline) {
-        this.deadline = deadline;
     }
 
     public Timestamp getCreated_at() {
