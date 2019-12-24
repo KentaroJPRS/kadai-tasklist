@@ -5,8 +5,22 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
+            <c:when test="${task.status == 1}">
+                <c:set var="status_char" value="実施中" />
+            </c:when>
+            <c:when test="${task.status == 2}">
+                <c:set var="status_char" value="完了" />
+            </c:when>
+            <c:when test="${task.status == 3}">
+                <c:set var="status_char" value="中止" />
+            </c:when>
+            <c:otherwise>
+                <c:set var="status_char" value="未着手" />
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
             <c:when test="${task != null}">
-                <h2>id : ${task.id} の詳細内容</h2>
+                <h2>タスクID : ${task.id} の詳細内容</h2>
 
                 <table>
                     <tbody>
@@ -20,15 +34,17 @@
                         </tr>
                         <tr>
                             <th>タスク状態</th>
-                            <td><c:out value="${task.status}" /></td>
+                            <td><c:out value="${status_char}" /></td>
                         </tr>
                         <tr>
                             <th>登録日時</th>
-                            <td><fmt:formatDate value="${task.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                            <td><fmt:formatDate value="${task.created_at}"
+                                    pattern="yyyy-MM-dd HH:mm:ss" /></td>
                         </tr>
                         <tr>
                             <th>更新日時</th>
-                            <td><fmt:formatDate value="${task.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                            <td><fmt:formatDate value="${task.updated_at}"
+                                    pattern="yyyy-MM-dd HH:mm:ss" /></td>
                         </tr>
                     </tbody>
                 </table>

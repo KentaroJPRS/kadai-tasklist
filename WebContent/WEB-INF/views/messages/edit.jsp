@@ -5,7 +5,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${task != null}">
-                <h2>id : ${task.id} の内容編集ページ</h2>
+                <h2>タスクID : ${task.id} の編集ページ</h2>
 
                 <form method="POST"
                     action="${pageContext.request.contextPath}/update">

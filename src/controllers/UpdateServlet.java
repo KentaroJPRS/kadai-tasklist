@@ -50,6 +50,9 @@ public class UpdateServlet extends HttpServlet {
             String content = request.getParameter("content");
             t.setContent(content);
 
+            Integer status = Integer.parseInt(request.getParameter("status"));
+            t.setStatus(status);
+
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             t.setUpdated_at(currentTime);       // 更新日時のみ上書き
 
@@ -69,7 +72,7 @@ public class UpdateServlet extends HttpServlet {
                 // データベースを更新
                 em.getTransaction().begin();
                 em.getTransaction().commit();
-                request.getSession().setAttribute("flush", "更新が完了しました。");
+                request.getSession().setAttribute("flush", "更新が完了しました。[タスクID："+ t.getId() + "]");
                 em.close();
 
                 // セッションスコープ上の不要になったデータを削除
