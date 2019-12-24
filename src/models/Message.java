@@ -29,11 +29,17 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "taskname", length = 255, nullable = false)
-    private String taskname;
+    @Column(name = "title", length = 255, nullable = false)
+    private String title;
 
     @Column(name = "content", length = 255, nullable = false)
     private String content;
+
+    @Column(name = "status", nullable = false)
+    private Integer status;
+
+    @Column(name = "deadline", nullable = false)
+    private Timestamp deadline;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -49,12 +55,12 @@ public class Message {
         this.id = id;
     }
 
-    public String getTaskname() {
-        return taskname;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTaskname(String taskname) {
-        this.taskname = taskname;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -63,6 +69,22 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Timestamp getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Timestamp deadline) {
+        this.deadline = deadline;
     }
 
     public Timestamp getCreated_at() {
